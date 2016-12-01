@@ -1,0 +1,40 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:widgets="utils/widgets" loaded="pageLoaded" id="nosotrosScreen" cssClass="screen">
+    <Page.actionBar>
+        <widgets:action-bar />
+    </Page.actionBar>
+
+    <StackLayout>
+
+        <ScrollView>
+            <StackLayout margin="10">
+                <GridLayout rows="25, auto" columns="auto, auto">
+                    <Image rowSpan="2" src="~/resources/chef.png" cssClass="about-image" />
+
+                    <Label col="1" text="El buen Sabor" verticalAlignment="top" />
+
+                    <Label row="1" col="1" text="Version 1" verticalAlignment="top" />
+                </GridLayout>
+
+                <TextView text="The maximum image size is 2.0MB. If the uploaded image does not display in the simulator after you apply your changes, wait a few seconds and refresh the simulator.
+
+The maximum image size is 2.0MB. If the uploaded image does not display in the simulator after you apply your changes, wait a few seconds and refresh the simulator.
+
+The maximum image size is 2.0MB. If the uploaded image does not display in the simulator after you apply your changes, wait a few seconds and refresh the simulator.
+
+The maximum image size is 2.0MB. If the uploaded image does not display in the simulator after you apply your changes, wait a few seconds and refresh the simulator." editable="false" />
+
+                <Button text="Contactanos" tap="{{ onContactTap }}" />
+
+                <Button text="Like us on Facebook" tap="{{ onFacebookTap }}" />
+
+                <Button text="Follow us on Twitter" tap="{{ onTwitterTap }}" />
+            </StackLayout>
+        </ScrollView>
+        <!-- additional view content -->
+
+        <!-- START_CUSTOM_CODE_nosotros -->
+        <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+
+        <!-- END_CUSTOM_CODE_nosotros -->
+    </StackLayout>
+</Page>

@@ -1,0 +1,60 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:widgets="utils/widgets" loaded="pageLoaded" id="usersScreen" cssClass="screen">
+    <Page.actionBar>
+        <widgets:action-bar />
+    </Page.actionBar>
+
+    <StackLayout>
+
+        <ScrollView>
+            <StackLayout>
+
+
+                <GridLayout columns="*, *" rows="auto, auto" cssClass="form-item field field--text" id="celularField">
+
+
+                    <Label text="Celular" cssClass="label" col="0" row="1" />
+
+
+                    <TextField col="1" row="1" text="{{ celular }}" />
+
+                    <!-- celular content -->
+
+                </GridLayout>
+
+                <StackLayout cssClass="form-item-border" height="1"></StackLayout>
+
+
+                <GridLayout columns="*" rows="auto, auto" cssClass="form-item field field--text" id="direccionField">
+
+
+                    <Label text="direccion" cssClass="label" col="1" row="0" />
+
+
+                    <TextField col="1" row="1" text="{{ direccion }}" />
+
+                    <!-- direccion content -->
+
+                </GridLayout>
+
+                <StackLayout cssClass="form-item-border" height="1"></StackLayout>
+                <!-- usersModel additional fields -->
+
+
+                <GridLayout columns="*, *" rows="auto" cssClass="form-buttons">
+
+                    <widgets:button text="Cancelar" tap="{{onusersModelFormCancel}}" />
+
+
+                    <widgets:button col="1" text="OK" tap="{{onusersModelFormSubmit}}" />
+
+                </GridLayout>
+            </StackLayout>
+        </ScrollView>
+        <!-- additional view content -->
+
+        <!-- START_CUSTOM_CODE_users -->
+        <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+
+        <!-- END_CUSTOM_CODE_users -->
+    </StackLayout>
+</Page>

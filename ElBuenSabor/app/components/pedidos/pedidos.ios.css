@@ -1,0 +1,18 @@
+.btnCantidad Label {
+    color: gray;
+    border-color: gray;
+    border-style: solid;
+    border-width: 0.5;
+    padding: 3;
+}
+
+.btnCantidad Label.agregar {
+    min-width: 80;
+    text-align: center;
+}
+
+.footer{
+    background-color: #f86a44;
+    color: #fff;
+    padding: 10;
+}

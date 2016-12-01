@@ -1,0 +1,37 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:widgets="utils/widgets" loaded="pageLoaded" id="sugerenciasScreen" cssClass="screen">
+    <Page.actionBar>
+        <widgets:action-bar />
+    </Page.actionBar>
+
+    <StackLayout>
+
+        <GridLayout rows="auto, *">
+
+            <widgets:button text="Add" tap="onAddItemTap" />
+
+            <ListView row="1" items="{{ listItems }}" itemTap="onListViewItemTap">
+                <ListView.itemTemplate>
+                    <StackLayout>
+                        <GridLayout columns="*" cssClass="padded-label">
+
+
+                            <StackLayout col="0" cssClass="padded-label-stack">
+                                <Label text="{{ header }}" cssClass="title-label" textWrap="true" />
+                                <Label text="{{ description }}" textWrap="true" />
+                            </StackLayout>
+
+                        </GridLayout>
+                        <!-- additional view content -->
+                    </StackLayout>
+                </ListView.itemTemplate>
+            </ListView>
+            <ActivityIndicator row="1" busy="{{ isLoading }}" />
+        </GridLayout>
+        <!-- additional view content -->
+
+        <!-- START_CUSTOM_CODE_sugerencias -->
+        <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+
+        <!-- END_CUSTOM_CODE_sugerencias -->
+    </StackLayout>
+</Page>

@@ -1,0 +1,42 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:widgets="utils/widgets" navigatedTo="navigatedTo" id="sugerenciasModelDetailsScreen" cssClass="screen">
+    <Page.actionBar>
+        <widgets:action-bar />
+    </Page.actionBar>
+
+    <ScrollView>
+        <StackLayout>
+
+            <GridLayout rows="auto, *">
+                <GridLayout rows="auto" columns="*, *">
+
+
+                    <widgets:button col="1" text="Delete" tap="onDeleteItemTap" />
+
+                </GridLayout>
+                <StackLayout row="1">
+
+
+                    <Label text="{{ sugerencia }}" />
+
+
+                    <TextView text="{{ respuesta }}" />
+
+
+                    <GridLayout columns="*, *" rows="auto, auto" cssClass="form-item field field--heading" id="sugerenciaField">
+
+
+                        <Label col="0" row="1" text="{{ sugerencia }}" cssClass="h1" textWrap="true" />
+
+                        <!-- sugerencia content -->
+
+                    </GridLayout>
+
+                    <StackLayout cssClass="form-item-border" height="1"></StackLayout>
+                    <!-- additional view content -->
+
+                </StackLayout>
+            </GridLayout>
+
+        </StackLayout>
+    </ScrollView>
+</Page>

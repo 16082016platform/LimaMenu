@@ -1,0 +1,62 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:widgets="utils/widgets" loaded="pageLoaded" id="categoriasScreen" cssClass="screen">
+    <Page.actionBar>
+        <widgets:action-bar />
+    </Page.actionBar>
+    <!--<Page.actionBar>
+        <ActionBar title="Categorías" automationText="ActionBar">
+            <NavigationButton icon="res://ic_back" tap="goBack" automationText="GoBack" />
+        </ActionBar>
+    </Page.actionBar>-->
+    <StackLayout>
+        <GridLayout rows="auto, auto, auto, *, auto">
+            <Repeater row="0" items="{{ listItems }}">
+                <Repeater.itemsLayout>
+                    <StackLayout orientation="horizontal"/>
+                </Repeater.itemsLayout>
+                <Repeater.itemTemplate>
+                    <label width="{{ width }}" isEnabled="{{ !isActivo }}" height="3" cssClass="{{ isActivo? 'categoriaActiva' : '' }}" />
+                </Repeater.itemTemplate>
+            </Repeater>
+            <Repeater row="1" items="{{ listItems }}">
+                <Repeater.itemsLayout>
+                    <StackLayout orientation="horizontal"/>
+                </Repeater.itemsLayout>
+                <Repeater.itemTemplate>
+                    <label  text="{{ nombre }}" idCategoria="{{ details.Id }}" tap="cambiarCategoria" height="35" width="{{ width }}" isEnabled="{{ !isActivo }}" color="{{ isActivo? '#16a2b3' : '#000' }}"/>
+                </Repeater.itemTemplate>
+            </Repeater>
+            <StackLayout row="2" visibility="{{ existenPlatos ? 'collapsed' : 'visible' }}">
+                <Image src="~/images/icon.png" stretch ="aspectFit"/>
+            </StackLayout>
+            <ListView row="3" items="{{ listPlatos }}" visibility="{{ existenPlatos ? 'visible' : 'collapsed' }}"  itemLoading="listViewItemLoading">
+                <ListView.itemTemplate>
+                    <StackLayout>
+                        <GridLayout columns="*,3*"  cssClass="padded-label" visibility="{{ isVisible ? 'visible' : 'collapsed' }}">
+                            <StackLayout col="0" cssClass="padded-label-stack" text="{{ 'S/ '+ precio }}" tap="onListViewItemTap" index="{{index}}">
+                                <Image src="~/images/nativescript_logo.png" stretch ="aspectFit" />
+                            </StackLayout>
+                            <StackLayout col="1" cssClass="padded-label-stack">
+                                <Label text="{{ nombre }}" cssClass="h4" textWrap="true" />
+                                <StackLayout orientation="horizontal" horizontalAlignment="right" cssClass="btnCantidad">
+                                    <Label text=" - " textWrap="true" tap="disminuir" index="{{index}}" visibility="{{cantidad>0?'visible':'collapsed'}}" />
+                                    <Label text="{{ cantidad>0?cantidad:'Agregar' }}" textWrap="true" tap="aumentar" index="{{index}}" cssClass="agregar"/>
+                                    <Label text=" + " textWrap="true" tap="aumentar" index="{{index}}" />
+                                </StackLayout>
+                                <Label text="{{ details.etiqueta}}" cssClass="h5" textWrap="true" color="gray" />
+                                <Label text="{{ 'S/ '+ precio }}" cssClass="h4" textWrap="true" fontWeight="Bold" />
+                            </StackLayout>
+                        </GridLayout>
+                        <!-- additional view content -->
+                    </StackLayout>
+                </ListView.itemTemplate>
+            </ListView>
+            <!-- will be seen as a footer -->
+            <GridLayout row="4" columns="auto,auto,*" cssClass="footer" loaded="onAnimateSpring" id="footer" >
+                    <Label col="0" text="Total: " visibility="{{total>0?'visible':'collapsed'}}" />
+                    <Label col="1" id="mensajePedidos" text="{{ total > 0 ? 'S/ ' + total : 'El carrito entá vacío'  }}" color="{{ total>0?'#f86a44':'#000' }}"/>
+                    <Label col="2" id="totalPedidos" text="{{ 'Comprar ('+cantidad+')' }}" tap="goToPedidos" horizontalAlignment="right"/>
+            </GridLayout>
+            <ActivityIndicator row="3" busy="{{ isLoading }}" />
+        </GridLayout>
+    </StackLayout>
+</Page>

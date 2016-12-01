@@ -10,7 +10,16 @@
       "icon": "home"
     }
   ],
-  "dataProviders": [],
+  "dataProviders": [
+    {
+      "type": "NativeScript:dataProvider",
+      "name": "elBuenSabor",
+      "source": "everlive",
+      "everliveKey": "qeop94wm2ykdozvv",
+      "offlineStorage": false,
+      "title": "ElBuenSabor / ElBuenSabor"
+    }
+  ],
   "name": "nativeScriptApp",
   "navigation": "listmenu",
   "transition": "none",

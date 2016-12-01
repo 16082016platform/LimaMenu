@@ -8,6 +8,9 @@ function pageLoaded(args) {
     helpers.platformInit(page);
     page.bindingContext = navigationViewModel;
     navigationViewModel.set('pageTitle', 'nativeScriptApp');
+
+    //animacion
+    showActionBar(page);
 }
 
 function menuItemTap(args) {
@@ -16,3 +19,10 @@ function menuItemTap(args) {
 
 exports.pageLoaded = pageLoaded;
 exports.menuItemTap = menuItemTap;
+
+function showActionBar(page) {
+    setTimeout(function () {
+        // introElements.margin = "-44 0 0 0";
+        page.actionBarHidden = false;
+    }, 300);
+}
