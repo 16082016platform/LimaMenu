@@ -36,6 +36,10 @@ menuItems = [{
     "moduleName": "components/nosotros/nosotros",
     "icon": "\ue0de"
 }, {
+    "title": "conference-agenda",
+    "moduleName": "components/conference-agenda/conference-agenda-example",
+    "icon": "\ue0de"
+}, {
     "title": "Salir",
     "moduleName": "components/homeView/homeView",
     "icon": "\ue1ff",
