@@ -1,5 +1,5 @@
-.main-content {
-    background-color: #4ac1fa;
+.main-content, SegmentedBar {
+    background-color: gray ;
 }
 
 .conf-segmented-bar {
@@ -8,7 +8,7 @@
 }
 
 SearchBar {
-    background-color: #4ac1fa;
+    background-color: gray;
     padding: -1 0 0 0;
 }
 
